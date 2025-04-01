@@ -304,14 +304,18 @@ app.patch('/post/:uuid/:collection/dislike', isLoggedIn, async (req, res) => {
 app.patch('/post/comment/:uuid',isLoggedIn, async(req, res) => {
     let { uuid } = req.params;
     const {comment} = req.body;
+    
     let posts = await post.findOneAndUpdate(
         {uuid:uuid},
         { $push: { Comment: comment, name: req.user.username} },
     )
-    let homes = await home.findOneAndUpdate(
-        {uuid:uuid},
-        { $push: { Comment: comment, name: req.user.username } },
-    )
+    let arr=[management, business, cricket, electronics, cs, smartphones, apple, software, home] 
+    for(el of arr){
+        let postToUpdate = await el.findOneAndUpdate(
+            { uuid: uuid },
+            { $push: { Comment: comment, name: req.user.username} },
+        )
+    }
     res.redirect('/post');
 });
 app.delete('/post/yourpost/:uuid',isLoggedIn,async (req, res) => {
