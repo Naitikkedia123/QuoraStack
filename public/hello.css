@@ -1,0 +1,471 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark Background */
+    color: #e0e0e0; /* Light Text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+/* Header */
+/* Header */
+
+/* To prevent content from hiding under the fixed header */
+body {
+    padding-top: 70px; /* Adjust this value based on your header height */
+}
+
+
+/* Main Container */
+.post {
+    width: 50%;
+    margin: 20px auto;
+}
+
+/* Post Container */
+.container {
+    background: #1e1e1e;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+/* User Image */
+.container img {
+    width: 250px;
+    height: 300px;
+    border-radius: 10%;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 2px solid #ff4b4b;
+}
+
+/* Username & Content */
+.container h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #ff4b4b;
+}
+
+.container p {
+    font-size: 16px;
+    color: #cfcfcf;
+}
+
+/* Buttons */
+button {
+    background-color: #ff4b4b;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #e03b3b;
+}
+
+/* New Post Button */
+#new-post {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+}
+
+/* Delete Button */
+#delete {
+    background-color: #ff4747;
+}
+
+#delete:hover {
+    background-color: #d63636;
+}
+/* General Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background-color: #1e1e1e; /* Dark Mode */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Left Section */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Quora Logo */
+
+/* Center Icons */
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-icons a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.nav-icons a:hover {
+    color: #ff4b4b;
+    border-bottom: 3px solid #ff4b4b;
+}
+
+/* Right Section */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Quora+ Button */
+.quora-plus {
+    background-color: #2a2a2a;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quora-plus:hover {
+    background-color: #3a3a3a;
+}
+
+/* Profile Icon */
+.profile-icon {
+    width: 32px;
+    height: 32px;
+    background-color: purple;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Globe Icon */
+.nav-right a {
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+}
+
+/* Add Question Button */
+.add-question {
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-question:hover {
+    background-color: #e63939;
+}
+
+.add-question span {
+    font-size: 12px;
+    margin-left: 5px;
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #111;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Logo Styling */
+
+
+/* Menu Styling */
+.menu {
+    list-style: none;
+    padding-top: 10%;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Icons and Images */
+.menu a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.menu a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Hover Effect */
+.menu a:hover {
+    background: gray;
+}
+
+/* Footer Links */
+.footer-menu {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.footer-menu li {
+    margin: 5px 0;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+}
+
+.footer-menu a:hover {
+    color: white;
+}
+/* Username Styling */
+/* Dark Mode Background */
+body {
+    background: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+}
+
+/* Post Container 
+/* Username Styling */
+.username {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Content Styling */
+.content {
+    font-size: 16px;
+    color: #cccccc;
+    line-height: 1.6;
+    padding: 10px;
+    border-left: 4px solid #007bff;
+    background: #2a2a2a;
+    border-radius: 5px;
+}
+
+/* Image Styling */
+.post-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff4b4b; /* Quora red */
+    margin: 10px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #333;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 250px;
+    margin-right: 1em;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    padding: 5px;
+    color: white;
+    outline: none;
+    flex: 1;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.search-box button i {
+    font-size: 16px;
+}
+.scroll-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff4b4b;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+.new-post {
+    position: fixed;  /* Keeps it in place */
+    top: 80px;  /* Adjust based on navbar height */
+    right: 20px;  /* Moves it to the right side */
+    background-color: #e60023;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+    z-index: 1000;
+    width: 23em;  /* Ensures it stays above other elements */
+}
+
+.new-post :hover {
+    background-color: #c4001d;
+}
+/* Comment Section */
+.comment-section {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+}
+
+/* Individual Comment */
+.comment {
+    background: #2a2a2a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-left: 4px solid #ff4b4b;
+}
+
+/* Comment Text */
+.comment .content {
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+/* Comment Form */
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Comment Input */
+.comment-form textarea {
+    background: #21262D;
+    color: #C9D1D9;
+    border: 1px solid #30363D;
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Comment Input Focus */
+.comment-form textarea:focus {
+    border-color: #ff4b4b;
+    box-shadow: 0 0 5px rgba(255, 123, 114, 0.5);
+}
+
+/* Comment Button */
+.comment-form .post-button {
+    background-color: #ff4b4b;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Comment Button Hover */
+.comment-form .post-button:hover {
+    background-color: #e03b3b;
+}
+.comment-name {
+    color: #007BFF;
+    font-weight: bold;;
+}
+
+.comment-text {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 5px;
+}

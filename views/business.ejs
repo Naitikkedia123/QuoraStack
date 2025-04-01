@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora</title>
+    <link rel="stylesheet" href="/hello.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        #business {
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <%- include("includes/same.ejs") %>
+    
+    <div class="post">
+        <% for(user of businesss) { %>
+            <div class="container">
+                <img src="/uploads/<%= user.image %>" alt="Post Image" class="post-image">
+                <h2 class="username">@<%= user.username %></h2>
+                <p class="content"><%= user.content %></p>
+
+                <!-- Like and View Buttons -->
+                <button onclick="likePost('<%= user.uuid %>', 'business', this)">
+                    <i class="fa-solid fa-thumbs-up"></i> <span><%= user.like %></span>
+                </button>
+                <button onclick="dislikePost('<%= user.uuid %>', 'business', this)">
+                    <i class="fa-solid fa-thumbs-down"></i> <span><%= user.dislike %></span>
+                </button>
+                <form action="/post/follow/<%= user.uuid %>?_method=PUT" method="POST" style="display: inline-block;" onsubmit="followPost(event, this)">
+                    <input type="hidden" name="_method" value="PUT">
+                    <button type="submit">Follow</button>
+                </form>
+                <button><a href="/post/<%= user.uuid %>">View</a></button>
+
+                <!-- Comment Section -->
+                <% if (user.Comment && user.Comment.length > 0) { %>
+                    <div class="comment-section">
+                        <h3>Comments</h3>
+                        <% for (let i=0;i<user.Comment.length;i++) { %>
+                            <div class="comment">
+                                <p class="comment-name" style="color: #FF4500;font-weight: bold;font-size: 18px;"><%= user.name[i] %>:</p>
+                                <p class="comment-text" style="font-size: 16px;line-height: 1.6;"><%= user.Comment[i] %></p>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+
+                <!-- Add Comment Form -->
+                <form class="comment-form" action="/post/comment/<%= user.uuid %>?_method=PATCH" method="POST">
+                    <textarea class="input-field textarea-field" name="comment" placeholder="Write a comment..." required></textarea>
+                    <button class="post-button" type="submit">Comment</button>
+                </form>              
+            </div>
+        <% } %>
+    </div>
+
+    <button class="scroll-top" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+    <script>
+        async function likePost(postId, collection, button) {
+                let response = await fetch(`/post/${postId}/${collection}/like`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                });
+    
+                if (!response.ok) {
+                    throw new Error("Failed to update like count");
+                }
+    
+                let data = await response.json();
+                
+                // Update like count on the button
+                button.querySelector("span").innerText = data.likes;
+        }
+        async function dislikePost(postId, collection, button) {
+                let response = await fetch(`/post/${postId}/${collection}/dislike`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                });
+    
+                if (!response.ok) {
+                    throw new Error("Failed to update like count");
+                }
+    
+                let data = await response.json();
+                
+                // Update like count on the button
+                button.querySelector("span").innerText = data.dislikes;
+        }
+    </script>
+    <%-include("includes/button.ejs")%>;
+</body>
+</html>

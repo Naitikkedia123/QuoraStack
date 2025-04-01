@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="/new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <%-include("includes/navbar.ejs") %>
+</head>
+<body class="body-dark">
+    <%-include("includes/same.ejs") %>
+    <div class="post-container">
+        <form action="/post/new" method="POST" enctype="multipart/form-data">
+            <h1 class="post-heading">Add New Post</h1>
+            <input type="text" name="username" class="input-field" placeholder="Username" required>
+            <hr>
+            <textarea name="content" class="textarea-field input-field" placeholder="Enter content" required></textarea>
+            <br>
+            <input type="file" name="image" class="file-input" accept="image/*" required>
+            <br><br>
+            <button type="submit" class="submit-btn">Post</button>
+        </form>
+    </div>
+</body>
+</html>
+

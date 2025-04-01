@@ -1,0 +1,130 @@
+/* Dark Mode Styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Post container */
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Individual post styling */
+/* Post container */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px auto;
+    width: 60%;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Image Styling */
+#post-image {
+    width: 250px; /* Adjusted size */
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+/* Username Styling */
+.username {
+    font-size: 18px;
+    font-weight: bold;
+    color:#ff4b4b ;
+    margin-top: 5px;
+}
+
+/* Content Styling */
+.content {
+    font-size: 16px;
+    color: #cccccc;
+    line-height: 1.6;
+    padding: 10px 15px;
+    border-left: 4px solid #007bff;
+    background: #2a2a2a;
+    border-radius: 5px;
+    text-align: center; /* Center text */
+    width: 80%; /* Make text box wider */
+}
+
+/* Button container (Aligns buttons in one line) */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adds spacing between buttons */
+    margin-top: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #bb86fc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #9b69d5;
+}
+
+/* Links inside buttons */
+button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Delete button */
+#delete {
+    background-color: #cf6679;
+}
+
+#delete:hover {
+    background-color: #b34552;
+}
+
+/* No posts message */
+p {
+    text-align: center;
+    font-size: 18px;
+    color: #bbbbbb;
+}
+body {
+    padding-top: 70px; /* Adjust this value based on your header height */
+}
+#f{
+    color: #ff4b4b;
+    border-bottom: 3px solid #ff4b4b;
+}
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff; /* White text */
+    background-color: #2a2a2a; /* Darker shade to match the theme */
+    padding: 12px 0;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 60%;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1); /* Softer shadow effect */
+}

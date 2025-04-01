@@ -1,0 +1,87 @@
+/* Dark Mode Base Styling */
+.body-dark {
+    background-color: #121212;
+    color: #E6EDF3;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Post Container */
+.post-container {
+    background-color: #161B22;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.08);
+    width: 40%;
+    text-align: center;
+    border: 1px solid #30363D;
+}
+
+/* Heading Styling */
+.post-title {
+    color: #FF7B72;
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.post-subtitle {
+    color: #8B949E;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Form Styling */
+.post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Input & Textarea Fields */
+.input-field {
+    background-color: #21262D;
+    color: #C9D1D9;
+    border: 1px solid #30363D;
+    padding: 12px;
+    border-radius: 8px;
+    width: 90%;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Hover & Focus Effects */
+.input-field:focus {
+    border-color: #FF7B72;
+    box-shadow: 0 0 5px rgba(255, 123, 114, 0.5);
+}
+
+/* Textarea Specific Styling */
+.textarea-field {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Button Styling */
+.post-button {
+    background-color: #238636;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease-in-out;
+}
+
+.post-button:hover {
+    background-color: #2EA043;
+}
+/* Responsive Design *
