@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #ff4500;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Helvetica Neue', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.container {
+    width: auto;
+    margin: 20px auto;
+    margin-left: 5px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.post {
+    background-color: #ffe4e1;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.post h2 {
+    color: #1e90ff;
+    margin: 0;
+}
+
+.post p {
+    color: #1e90ff;
+    margin: 5px 0;
+}
+
+.post .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.post button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.post button:hover {
+    background-color: #0056b3;
+}
+
+
+.new-post {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.new-post:hover {
+    background-color: #4682b4;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+textarea{
+    width: 50%;
+    height: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: x-large;
+}
+textarea::placeholder{
+    font-size: xx-large;
+}
+input{
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0; 
+    height: 50px;
+    font-size: x-large;
+}
+input::placeholder{
+    font-size: x-large;
+}
+input::content{
+    font-size: x-large;
+}
+#new-post {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #05e6d3; /* light blue background */
+    color: white; /* white text */
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* no underline */
+    font-size: 18px; /* larger font size */
+    font-weight: bold; /* bold text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    transition: background-color 0.3s, transform 0.3s; /* smooth transitions */
+}
+#new-post:hover {
+    background-color: #00b3a2; /* deeper blue on hover */
+}
+#delete:hover {
+    background-color: #ff0000; /* deeper red on hover */
+}
