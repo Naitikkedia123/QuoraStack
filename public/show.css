@@ -1,0 +1,58 @@
+body {
+    background-color: #121212; /* Dark background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #e0e0e0; /* Light text for contrast */
+}
+
+.post {
+    background-color: #1e1e1e; /* Dark card background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1); /* Soft white shadow */
+    width: 50%;
+    text-align: center;
+    border: 1px solid #333; /* Subtle border */
+}
+
+.post img {
+    width: 200px; 
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #e0e0e0; /* Border to highlight the image */
+}
+
+.post h2 {
+    color: #e0e0e0; /* Light text color */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.post hr {
+    border: 0;
+    height: 1px;
+    background-color: #333; /* Darker separator */
+    margin: 10px 0;
+}
+.username-label {
+    color:#ff4b4b ;
+}
+
+.username-value {
+    color: #ADD8E6;
+}
+
+.content-label {
+    color: #ff4b4b;
+}
+
+.content-value {
+    color: #ADD8E6;
+}
+

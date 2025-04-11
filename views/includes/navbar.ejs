@@ -1,0 +1,413 @@
+<style>
+    .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background-color: #1e1e1e; /* Dark Mode */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Left Section */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Quora Logo */
+
+/* Center Icons */
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-icons a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.nav-icons a:hover, .nav-icons .h {
+    color: #ff4b4b;
+    border-bottom: 3px solid #ff4b4b;
+}
+
+/* Right Section */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Quora+ Button */
+.quora-plus {
+    background-color: #2a2a2a;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quora-plus:hover {
+    background-color: #3a3a3a;
+}
+
+/* Profile Icon */
+.profile-icon {
+    width: 32px;
+    height: 32px;
+    background-color: purple;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Globe Icon */
+.nav-right a {
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+}
+
+/* Add Question Button */
+.add-question {
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-question:hover {
+    background-color: #e63939;
+}
+
+.add-question span {
+    font-size: 12px;
+    margin-left: 5px;
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #111;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Logo Styling */
+
+
+/* Menu Styling */
+.menu {
+    list-style: none;
+    padding-top: 10%;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Icons and Images */
+.menu a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.menu a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Hover Effect */
+.menu a:hover {
+    background: gray;
+}
+
+/* Footer Links */
+.footer-menu {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.footer-menu li {
+    margin: 5px 0;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+}
+
+.footer-menu a:hover {
+    color: white;
+}
+
+/* Image Styling */
+.post-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff4b4b; /* Quora red */
+    margin: 10px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #333;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 250px;
+    margin-right: 1em;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    padding: 5px;
+    color: white;
+    outline: none;
+    flex: 1;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.search-box button i {
+    font-size: 16px;
+}
+.new-post{
+    display: none;
+}
+/* Styling for Authentication Section */
+.user-name {
+    color: #fff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Logout Button */
+.logout-btn {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c91c2b;
+}
+
+/* Login & Signup Buttons */
+#login-btn, #signup-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background-color: #e63946;
+    transition: 0.3s ease;
+}
+
+#login-btn:hover, #signup-btn:hover {
+    background-color: #c91c2b;
+}
+
+/* Add New Post Button */
+.add-question {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.add-question:hover {
+    background-color: #c91c2b;
+}
+@media screen and (max-width: 768px) {
+    /* Navbar Responsive */
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 15px;
+        height: auto;
+        gap: 10px;
+    }
+
+    /* Top bar with Logout, Add New Post, and Username in one line */
+.navbar-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    order: 1;
+    width: 100%;
+}
+
+.navbar-top .logout-btn,
+.navbar-top .add-question {
+    flex: 1 1 auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 8px;
+    white-space: nowrap;
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+
+    .add-question,
+    .logout-btn,
+    #login-btn,
+    #signup-btn {
+        padding: 10px 14px;
+        font-size: 16px;
+        border-radius: 6px;
+        background-color: #e60023;
+        color: white;
+        border: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        flex: 1 1 45%;
+        font-weight: bold;
+    }
+
+    .logout-btn {
+        background-color: #444;
+    }
+
+    /* Nav Icons */
+    .nav-icons {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
+        order: 4;
+    }
+
+    /* Search Bar */
+    .search-box {
+        order: 5;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .search-box input {
+        flex-grow: 1;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 14px;
+        padding: 6px;
+        outline: none;
+        min-width: 0;
+    }
+
+    .search-box button {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 4px;
+        font-size: 18px;
+    }
+
+    /* Hide Quora+ */
+    .quora-plus {
+        display: none !important;
+    }
+
+    /* Sidebar Hidden */
+    .sidebar {
+        display: none;
+    }
+    .post {
+        width: 90%;
+        margin: 180px auto 10px;
+    }
+    .logo {
+    text-align: center;
+    width: 100%;
+}
+}
+
+</style>

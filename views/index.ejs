@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora</title>
+    <link rel="stylesheet" href="/hello.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        #home {
+            color: #f00;
+        }
+        #h{
+            color: #ff4b4b;
+            border-bottom: 3px solid #ff4b4b;
+        }
+    </style>
+</head>
+<body>
+    <%- include("includes/same.ejs") %>
+    
+    <div class="post">
+        <% for(user of homes) { %>
+            <div class="container">
+                <img src="/uploads/<%= user.image %>" alt="Post Image" class="post-image">
+                <h2 class="username">@<%= user.username %></h2>
+                <p class="content"><%= user.content %></p>
+
+                <!-- Like and View Buttons -->
+                <button onclick="likePost('<%= user.uuid %>', 'home', this)">
+                    <i class="fa-solid fa-thumbs-up"></i> <span><%= user.like %></span>
+                </button>
+                <button onclick="dislikePost('<%= user.uuid %>', 'home', this)">
+                    <i class="fa-solid fa-thumbs-down"></i> <span><%= user.dislike %></span>
+                </button>
+                <form action="/post/follow/<%= user.uuid %>?_method=PUT" method="POST" style="display: inline-block;" onsubmit="followPost(event, this)">
+                    <input type="hidden" name="_method" value="PUT">
+                    <button type="submit">Follow</button>
+                </form>
+                
+                <button><a href="/post/<%= user.uuid %>">View</a></button>
+
+                <!-- Comment Section -->
+                <% if (user.Comment && user.Comment.length > 0) { %>
+                    <div class="comment-section">
+                        <h3>Comments</h3>
+                        <% for (let i=0;i<user.Comment.length;i++) { %>
+                            <div class="comment">
+                                <p class="comment-name" style="color: #FF4500;font-weight: bold;font-size: 18px;"><%= user.name[i] %>:</p>
+                                <p class="comment-text" style="font-size: 16px;line-height: 1.6;"><%= user.Comment[i] %></p>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+
+                <!-- Add Comment Form -->
+                <form class="comment-form" action="/post/comment/<%= user.uuid %>?_method=PATCH" method="POST">
+                    <textarea class="input-field textarea-field" name="comment" placeholder="Write a comment..." required></textarea>
+                    <button class="post-button" type="submit">Comment</button>
+                </form>                
+            </div>
+        <% } %>
+    </div>
+
+    <button class="scroll-top" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+    <% if (status === 'success') { %>
+        <script>
+            alert("Signup successful! Welcome to Quora");
+        </script>
+    <% } %>  
+    <% if (status === 'loggedout') { %>
+        <script>
+            alert("You are Successfully logged out");
+        </script>
+    <% } %>  
+    <% if (status === 'succes') { %>
+        <script>
+            alert("Login successful! Welcome Back to Quora");
+        </script>
+    <% } %>  
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+    <%-include("includes/button.ejs")%>;
+</body>
+</html>

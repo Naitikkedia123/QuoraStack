@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find</title>
+    <link rel="stylesheet" href="/show.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <%-include("includes/navbar.ejs")%>
+</head>
+<body>
+    <%-include("includes/same.ejs") %>
+    <div class="post">
+    <div>
+        <img src="/uploads/<%=posts.image%>" alt="image">
+        <h2><span class="username-label">Username:</span> <span class="username-value"><%= posts.username %></span></h2><hr>
+        <h2><span class="content-label">Content:</span> <span class="content-value"><%= posts.content %></span></h2>
+
+    </div>
+    </div>
+</body>
+</html>
