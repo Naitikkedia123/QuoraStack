@@ -534,11 +534,11 @@ body {
         gap: 30px; /* Adjust space between all items */
     }
     .nav-right .add-question {
-        margin-left: -25px; /* or whatever size you want */
+        margin-left: -20px; /* or whatever size you want */
     }
-    .logout-btn {
+    form button.logout-btn {
         background-color: #444;
-        margin-left: -10px;
+        margin-left: -32px;
     }
     .user-name{
         margin-left: -40px;
@@ -633,5 +633,15 @@ body {
     .logo {
     text-align: center;
     width: 100%;
+    }
+    .container button{
+        font-size: 15px;
+        padding: 5px 10px;
+        border-radius: 4px;
+        background-color: #ff4b4b;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
     }
 }
