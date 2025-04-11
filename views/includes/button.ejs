@@ -1,0 +1,71 @@
+<script>
+    async function likePost(postId, collection, button) {
+        try {
+            let response = await fetch(`/post/${postId}/${collection}/like`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+            });
+
+            let data = await response.json();
+
+            if (data.success) {
+                // Update like count on the button
+                button.querySelector("span").innerText = data.likes;
+                button.disabled = true; // Disable button after first click
+            } else {
+                alert(data.message); // Show error message if already liked
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    }
+
+    async function dislikePost(postId, collection, button) {
+        try {
+            let response = await fetch(`/post/${postId}/${collection}/dislike`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+            });
+
+            let data = await response.json();
+
+            if (data.success) {
+                // Update dislike count on the button
+                button.querySelector("span").innerText = data.dislikes;
+                button.disabled = true; // Disable button after first click
+            } else {
+                alert(data.message); // Show error message if already disliked
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    }
+</script>
+<script>
+async function followPost(event, form) {
+    event.preventDefault(); // Prevent form submission
+
+    let button = form.querySelector("button");
+    let postId = form.action.split("/").pop().split("?")[0]; // Extract postId from the form action
+
+    try {
+        let response = await fetch(form.action, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" }
+        });
+
+        let data = await response.json();
+
+        if (data.success) {
+            alert("You have followed this post successfully!");
+            button.disabled = true;// Change button text
+        } else {
+            alert("You have already followed this post!"); // Show alert for already followed
+            button.disabled = true;
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Something went wrong. Please try again.");
+    }
+}
+</script>

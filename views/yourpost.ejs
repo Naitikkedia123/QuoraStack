@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Post</title>
+    <link rel="stylesheet" href="/youpost.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <%-include("includes/navbar.ejs") %>
+    <style>
+        @media screen and (max-width: 768px){
+            .search-box {
+                display: none;
+            }
+            .post {
+                margin-top: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <%-include("includes/same.ejs") %>
+    <div class="post">
+        <% if (newPosts.length > 0) { %>
+            <h1>Your Posts</h1>
+            <% for(let user of newPosts) { %>
+                <div class="container">
+                    <img src="/uploads/<%= user.image %>" alt="Post Image" class="post-image">
+                    <h2 class="username">@<%= user.username %></h2>
+                    <p class="content"><%= user.content %></p>
+                </div>
+                <div class="button-container">
+                <button><a href="/post/<%=user.uuid%>">View</a></button>
+                <button><a href="/post/<%=user.uuid%>/edit">Edit</a></button>
+                <form action="/post/yourpost/<%=user.uuid%>?_method=DELETE" method="POST" style="display: inline-block;">
+                    <button type="submit" id="delete">Delete</button>
+                </form>
+                </div>
+            <% } %>
+        <% } else { %>
+            <p>No posts added yet.</p>
+        <% } %>
+    </div>
+</body>
+</html>

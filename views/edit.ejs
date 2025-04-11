@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/edit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <%-include("includes/navbar.ejs") %>
+</head>
+<body class="body-dark">
+    <%-include("includes/same.ejs") %>
+    <div class="post-container">
+        <h1 class="post-title">Edit Your Post</h1>
+        <form class="post-form" action="/post/<%= posts.uuid %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <input class="input-field" type="text" name="username" value="<%= posts.username %>" required>
+            <textarea class="input-field textarea-field" name="content" required><%= posts.content %></textarea>
+
+            <label for="image-upload" class="post-button">Upload New Image</label>
+            <input id="image-upload" type="file" name="image" accept="image/*" style="display: none;">
+
+            <button class="post-button" type="submit">Update Post</button>
+        </form>
+    </div>
+
+</body>
+</html>

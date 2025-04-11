@@ -1,0 +1,67 @@
+<div class="navbar">
+    <!-- Left Section -->
+    <div class="nav-left">
+        <div class="logo">Quora</div>
+    </div>
+
+    <!-- Center Icons -->
+    <div class="nav-icons">
+        <a href="/post" id="h"><i class="fas fa-home"></i></a>
+        <a href="/post/follow" id="f"><i class="fas fa-list"></i></a>
+        <a href="/post/yourpost" id="y"><i class="fas fa-pen"></i></a>
+        <a href="/post/people" id="c"><i class="fa-solid fa-people-group"></i></a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-box">
+        <form action="/search" method="POST">
+            <input type="text" placeholder="Search Quora..." name="search">
+            <button><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+
+    <!-- Right Section -->
+    <div class="nav-right">
+        <form action="https://www.quora.com/"><button class="quora-plus">Try Quora+</button></form>
+
+        <% if (currentUser) { %>
+            <!-- Show Logout and Username if Logged In -->
+            <span class="user-name">Hello, <%= currentUser.username %></span>
+            <form action="/logout">
+                <button class="logout-btn">Logout</button>
+            </form>
+        <% } else { %>
+            <!-- Show Login and Signup if Not Logged In -->
+            <a href="/login" id="login-btn">Login</a>
+            <a href="/signup" id="signup-btn">Signup</a>
+        <% } %>
+
+        <form action="/post/new" method="get">
+            <button class="add-question">Add New Post</button>
+        </form>
+    </div>
+</div>
+
+    <div class="sidebar">
+        <ul class="menu">
+            <li><a id="home" href="/post"><i class="fas fa-home"></i> Home</a></li>
+            <li><a id="cricket" href="/post/cricket"><i class="fas fa-futbol"></i> Cricket (sport)</a></li>
+            <li><a id="management" href="/post/management"><i class="fas fa-briefcase"></i> Management</a></li>
+            <li><a id="business" href="/post/business"><i class="fas fa-chart-line"></i> Business Strategy</a></li>
+            <li><a id="electronics" href="/post/electronics"><i class="fas fa-microchip"></i> Electronics</a></li>
+            <li><a id="cs" href="/post/cs"><i class="fas fa-laptop-code"></i> Computer Science</a></li>
+            <li><a id="smartphones" href="/post/smartphones"><i class="fas fa-mobile-alt"></i> Smartphones</a></li>
+            <li><a id="apple" href="/post/apple"><i class="fab fa-apple"></i> Apple Products and...</a></li>
+            <li><a id="software" href="/post/software"><i class="fas fa-code"></i> Software and Applications</a></li>
+
+        </ul>
+
+        <ul class="footer-menu">
+            <li><a href="/post/about" id="about">About</a></li>
+            <li><a href="/post/careers" id="careers" >Careers</a></li>
+            <li><a href="/post/terms" id="terms">Terms</a></li>
+            <li><a href="/post/Privacy" id="privacy">Privacy</a></li>
+            <li><a href="/post/acceptable" id="acceptable">Acceptable use</a></li>
+        </ul>
+    </div>
+    
