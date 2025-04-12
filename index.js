@@ -56,7 +56,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 const store=MongoStore.create({
-    mongoUrl:'mongodb://127.0.0.1:27017/quora',
+    mongoUrl:'mongodb+srv://kedianaitik2006:naitik123@cluster0.w4spnbk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
     crypto:{
         secret: 'your-secret-key',
     },
