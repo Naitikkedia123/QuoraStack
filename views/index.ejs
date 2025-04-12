@@ -85,6 +85,25 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
+    <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.querySelector(".navbar");
+        
+        window.addEventListener("scroll", () => {
+            if (window.innerWidth > 768) return; // Only apply on small screens
+        
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down
+                navbar.classList.add("hide-on-scroll");
+            } else {
+                // Scrolling up
+                navbar.classList.remove("hide-on-scroll");
+            }
+        
+            lastScrollY = window.scrollY;
+        });
+        </script>
+        
     <%-include("includes/button.ejs")%>;
 </body>
 </html>
