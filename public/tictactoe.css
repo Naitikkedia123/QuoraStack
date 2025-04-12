@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #nameForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  #nameForm input {
+    margin: 8px 0;
+    padding: 12px;
+    width: 100%;
+    font-size: 1.2rem; /* Increased */
+    font-weight: bold;  /* Added */
+    letter-spacing: 1px; /* Optional for style */
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    outline: none;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+  }
+  
+  #nameForm input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+  }
+  
+  #startGameBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #startGameBtn:hover {
+    background-color: #f0f0f0;
+  }
+  
+  body {
+    text-align: center;
+    background-image: url("/uploads/backimg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+  }
+  
+  /* Container */
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Title */
+  h1 {
+    margin-bottom: 5px;
+    font-size: 3.5rem;
+    font-weight: 900;
+  }
+  
+  /* Turn Indicator */
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Game Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 90vw;
+    max-width: 490px;
+    aspect-ratio: 1 / 1;
+    min-height: 300px; /* Prevent it from being too small */
+  }
+  
+  /* Grid Boxes */
+  .box {
+    border: 6px solid white;
+    font-size: clamp(2rem, 5vw, 5rem); /* Responsive size */
+    font-weight: bold;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+    aspect-ratio: 1 / 1; /* Keep boxes square */
+    min-height: 80px; /* Prevent shrinking too small */
+  }
+  
+  .box:hover {
+    box-shadow: 0 0 10px white;
+  }
+  
+  .box.disabled {
+    pointer-events: none;
+  }
+  
+  /* Reset Button */
+  .button {
+    margin-top: 20px;
+    height: 40px;
+    width: 150px;
+    font-weight: 800;
+    font-size: 18px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .button:hover {
+    box-shadow: 0px 0px 5px white;
+  }
+  
+  /* Winning Text */
+  .wins {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: red;
+    font-size: 3rem;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  .corner-nav {
+    position: fixed;
+    top: 15px;
+    left: 15px; /* Change to 'right: 15px;' if you want it on the right */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(17, 17, 17, 0.85);
+    padding: 8px 12px;
+    border-radius: 8px;
+    z-index: 999;
+    backdrop-filter: blur(4px);
+  }
+  
+  .logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e63946;
+    font-family: 'Georgia', serif;
+    white-space: nowrap;
+  }
+  
+  .home-icon {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .home-icon:hover {
+    color: #f1a1a1;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .corner-nav {
+      top: 10px;
+      left: 10px;
+      padding: 6px 10px;
+      gap: 8px;
+    }
+  
+    .logo-text {
+      font-size: 18px;
+    }
+  
+    .home-icon {
+      font-size: 16px;
+    }
+  }
+  
+  /* Responsive Font Size for Smaller Devices */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    h3 {
+      font-size: 2rem;
+      margin-top: 50px;
+      margin-bottom: 110px;
+    }
+  
+    .button {
+      width: 130px;
+      font-size: 16px;
+    }
+  
+    .box {
+      font-size: 2rem;
+      border-width: 4px;
+    }
+  }
+  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games: </title>
+    <link rel="stylesheet" href="/game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <%-include("includes/navbar.ejs") %>
+    <style>
+        #g {
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <%-include("includes/same.ejs") %>
+<div class="games-section">
+    <h1 class="games-heading">🎮 Game On: Unleash the Fun!</h1>
+
+    <div class="games-container">
+        <!-- Simon Says -->
+        <div class="game-card">
+            <img src="/uploads/simon.jpeg" alt="Simon Says Game" class="game-img" />
+            <h2>Simon Says</h2>
+            <p>Test your memory and reaction speed!</p>
+            <a href="/post/simon" class="play-btn">Play Now</a>
+        </div>
+
+        <!-- Tic Tac Toe -->
+        <div class="game-card">
+            <img src="/uploads/tic.jpeg" alt="Tic Tac Toe Game" class="game-img" />
+            <h2>Tic Tac Toe</h2>
+            <p>Classic 1v1 battle of Xs and Os.</p>
+            <a href="/post/tictactoe" class="play-btn">Play Now</a>
+        </div>
+    </div>
+</div>
+
+    
+</body>
+</html>

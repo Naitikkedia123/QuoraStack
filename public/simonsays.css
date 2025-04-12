@@ -1,0 +1,188 @@
+body {
+    text-align: center;
+    background-color: #121212;
+    color: #ffffff;
+    letter-spacing: 0.2em;
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6em;
+}
+
+.text {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #00ffc3;
+    text-shadow: 0 0 10px #00ffc3;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+    color: #cccccc;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #aaaaaa;
+    margin-bottom: 1rem;
+}
+
+/* Start Button */
+#startBtn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #00ffc3;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 15px #00ffc3;
+    transition: all 0.2s ease-in-out;
+    margin-top: 10px;
+}
+
+#startBtn:hover {
+    transform: scale(1.05);
+    background-color: #0ff;
+}
+
+/* Game Buttons Grid */
+.btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 1rem;
+    max-width: 90vw;
+    margin: 2rem auto;
+}
+
+.btn {
+    width: 40vw;            /* Each button is 40% of the screen width */
+    max-width: 160px;       /* So it doesn’t get too large on big screens */
+    aspect-ratio: 1 / 1;
+    border-radius: 25%;
+    border: 6px solid #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+
+.btn:active,
+.btn:hover {
+    transform: scale(1.02);
+    filter: brightness(110%);
+}
+
+/* Button Colors */
+.red {
+    background-color: #ff3c6f;
+}
+
+.yellow {
+    background-color: #f4b400;
+}
+
+.green {
+    background-color: #0ce861;
+}
+
+.purple {
+    background-color: #7c4dff;
+}
+
+/* Flash Effects */
+.gameflash {
+    filter: brightness(180%) saturate(150%);
+    transition: all 0.1s;
+}
+
+.userflash {
+    filter: brightness(80%) saturate(50%);
+    transition: all 0.1s;
+}
+.gameflash {
+    background-color: #ff0000 !important;
+}
+
+.userflash {
+    background-color: #E0E0E0 !important;
+}
+.corner-nav {
+    position: fixed;
+    top: 15px;
+    left: 15px; /* Change to 'right: 15px;' if you want it on the right */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(17, 17, 17, 0.85);
+    padding: 8px 12px;
+    border-radius: 8px;
+    z-index: 999;
+    backdrop-filter: blur(4px);
+  }
+  
+  .logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e63946;
+    font-family: 'Georgia', serif;
+    white-space: nowrap;
+  }
+  
+  .home-icon {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .home-icon:hover {
+    color: #f1a1a1;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .corner-nav {
+      top: 10px;
+      left: 10px;
+      padding: 6px 10px;
+      gap: 8px;
+    }
+  
+    .logo-text {
+      font-size: 18px;
+    }
+  
+    .home-icon {
+      font-size: 16px;
+    }
+}
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2, h3 {
+        font-size: 1rem;
+    }
+
+    #startBtn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .btn-container {
+        gap: 1rem;
+        padding: 1rem;
+    }
+}

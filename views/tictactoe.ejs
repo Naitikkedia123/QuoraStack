@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC-TAC-TOE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/tictactoe.css">
+</head>
+<body>
+
+    <h1>Tic-Tac-Toe</h1>
+    <h3>player 1 turn</h3>
+    <!-- Navigation Bar -->
+    <div class="corner-nav">
+        <div class="logo-text">Quora</div>
+        <a href="/post/game" class="home-icon" title="Go to Home">
+          <i class="fas fa-home"></i>
+        </a>
+      </div>
+      
+      
+    <center>
+        <div id="nameForm">
+            <input type="text" id="player1Name" placeholder="Enter Player One Name" required>
+            <input type="text" id="player2Name" placeholder="Enter Player Two Name" required>
+            <button id="startGameBtn">Start Game</button>
+          </div>
+    <div class="grid">
+        <div class="box" type="button" id="0"></div>
+        <div class="box" type="button" id="1"></div>
+        <div class="box" type="button" id="2"></div>
+        <div class="box" type="button" id="3"></div>
+        <div class="box" type="button" id="4"></div>
+        <div class="box" type="button" id="5"></div>
+        <div class="box" type="button" id="6"></div>
+        <div class="box" type="button" id="7"></div>
+        <div class="box" type="button" id="8"></div>
+    </div>
+    <button class="button">Reset</button>
+    <h1 class="win"></h1>
+    </center>
+    <script>
+        let started = false;
+let h3 = document.querySelector("h3");
+let boxes = document.querySelectorAll(".box");
+let turn0 = true;
+let btn = document.querySelector(".button");
+let player1 = [];
+let player2 = [];
+let h1 = document.querySelector(".win");
+let p1 = "";
+let p2 = "";
+
+const nameForm = document.getElementById("nameForm");
+const startGameBtn = document.getElementById("startGameBtn");
+
+startGameBtn.addEventListener("click", function () {
+    p1 = document.getElementById("player1Name").value.trim();
+    p2 = document.getElementById("player2Name").value.trim();
+
+    if (p1 === "" || p2 === "") {
+        alert("Please enter names for both players.");
+        return;
+    }
+
+    nameForm.style.display = "none"; // Hide name form
+    h3.innerText = `${p1}'s Turn`;
+});
+
+const winpattern = [
+    [0, 1, 2], 
+    [3, 4, 5], 
+    [6, 7, 8],  
+    [0, 3, 6],  
+    [1, 4, 7],  
+    [2, 5, 8],  
+    [0, 4, 8],  
+    [2, 4, 6]   
+];
+
+for (let box of boxes) {
+    box.addEventListener("click", function () {
+        if (p1 === "" || p2 === "") return; // Prevent play before names entered
+
+        if (turn0) {
+            this.style.color = "#DC143C";
+            this.innerText = "O";
+            h3.innerText = `${p2}'s Turn`;
+            turn0 = false;
+            player1.push(this.getAttribute("id"));
+            win(player1);
+        } else {
+            this.style.color = "#007BFF";
+            this.innerText = "X";
+            h3.innerText = `${p1}'s Turn`;
+            turn0 = true;
+            player2.push(this.getAttribute("id"));
+            win(player2);
+        }
+        this.classList.add("disabled");
+    });
+}
+
+function win(arr) {
+    for (let pattern of winpattern) {
+        if (pattern.every(num => arr.includes(num.toString()))) {
+            boxes.forEach(box => box.classList.add("disabled"));
+            if (turn0 === false) {
+                h1.innerText = `${p1} Wins!!`;
+            } else {
+                h1.innerText = `${p2} Wins!!`;
+            }
+            h1.classList.add("wins");
+        }
+    }
+}
+
+btn.addEventListener("click", function () {
+    turn0 = true;
+    for (let box of boxes) {
+        box.innerText = "";
+        box.classList.remove("disabled");
+        box.style.color = "white";
+    }
+    player1 = [];
+    player2 = [];
+    h1.innerText = "";
+    h1.classList.remove("wins");
+    nameForm.style.display = "flex"; // Show name input again
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Post</title>
+    <link rel="stylesheet" href="/follow.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <%-include("includes/navbar.ejs") %>
+    <style>
+        @media screen and (max-width: 768px){
+            .search-box {
+                display: none;
+            }
+            .post {
+                margin-top: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <%-include("includes/same.ejs") %>
+    <div class="post">
+        <% if (follows.length > 0) { %>
+            <h1>Your Following</h1>
+            <% for(let user of follows) { %>
+                <div class="container">
+                    <img src="/uploads/<%= user.image %>" alt="Post Image" id="post-image">
+                    <h2 class="username">@<%= user.username %></h2>
+                    <p class="content"><%= user.content %></p>
+                </div>
+                <div class="button-container">
+                <button><a href="/post/<%=user.uuid%>">View</a></button>
+                <form action="/post/unfollow/<%=user.uuid%>?_method=DELETE" method="POST" style="display: inline-block;">
+                    <button type="submit" id="delete">Unfollow</button>
+                </form>
+                </div>
+            <% } %>
+        <% } else { %>
+            <p>You do not follow Anyone.</p>
+        <% } %>
+    </div>
+</body>
+</html>

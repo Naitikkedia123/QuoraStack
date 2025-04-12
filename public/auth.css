@@ -1,0 +1,137 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0e0e0e;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background Animation */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.2) 10%, transparent 60%);
+  animation: moveBackground 6s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+@keyframes moveBackground {
+  from {
+    transform: translateX(-10%) translateY(-10%);
+  }
+  to {
+    transform: translateX(10%) translateY(10%);
+  }
+}
+
+/* Auth Container */
+.auth-container {
+  background-color: rgba(28, 28, 28, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 45px;
+  font-weight: bold;
+  color: #ff4b4b;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Input Fields */
+.auth-container input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  font-size: 18px;
+  border: none;
+  background-color: #222;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+.auth-container button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  margin-top: 10px;
+  border: none;
+  background-color: #ff4b4b;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-sizing: border-box;
+}
+
+.auth-container button:hover {
+  background-color: #e03e3e;
+}
+
+/* Links */
+.auth-container p {
+  font-size: 16px;
+  margin-top: 15px;
+  color: #ccc;
+}
+
+.auth-container a {
+  color: #4eaaff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+  .auth-container {
+    width: 90%;
+    padding: 25px 20px;
+  }
+
+  .logo {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .auth-container input,
+  .auth-container button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .auth-container p,
+  .auth-container a {
+    font-size: 14px;
+  }
+}
